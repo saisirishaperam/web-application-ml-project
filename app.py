@@ -1,5 +1,6 @@
 import pandas as pd
 import numpy as np  
+from sklearn.model_selection import train_test_split
 from sklearn.linear_model import LogisticRegression
 import streamlit as st 
 
@@ -7,7 +8,6 @@ dataset=pd.read_csv('crop.csv')
 x=dataset.iloc[:,:-1].values
 y=dataset.iloc[:,-1].values 
 
-from sklearn.model_selection import train_test_split
 x_train,x_test,y_train,y_test=train_test_split(x,y,test_size=0.2)
 
 classifier=LogisticRegression()
